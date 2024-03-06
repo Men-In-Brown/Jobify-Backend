@@ -1,0 +1,47 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>Linkr Admin Page</title>
+</head>
+
+<body>
+<th:block layout:fragment="body" th:remove="tag">
+    <!-- Start of body content specific to page -->
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                background: linear-gradient(to bottom right, #800080, #4B0082);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+    
+            h1 {
+                font-size: 2em;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+    
+            p {
+                font-size: 1.2em;
+                text-align: center;
+            }
+        </style>
+        <div>
+            <h1 style="text-align: center;">LINKR</h1>
+            <p> Make your project to come to life</p>
+        </div>
+    </body>
+    <!-- End of body content specific to page -->
+</th:block>
+</body>
+
+</html>
