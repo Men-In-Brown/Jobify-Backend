@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class FileUploadController {
 
     @Autowired
-    private FileUploadJpaRepository FileUploadJpaRepository;
+    private FileUploadJpaRepository fileUploadRepository;
 
     @PostMapping("/upload")
     public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file,
@@ -43,7 +43,7 @@ public class FileUploadController {
             fos.close();
 
             // Save file details to database
-            FileUpload savedFile = FileUploadJpaRepository.save(new FileUpload(file.getOriginalFilename(), convertedFile.getAbsolutePath(), true, uploaderUsername, description));
+            FileUpload savedFile = fileUploadRepository.save(new FileUpload(file.getOriginalFilename(), convertedFile.getAbsolutePath(), true, uploaderUsername, description));
             return new ResponseEntity<>("File uploaded successfully with ID: " + savedFile.getId(), HttpStatus.CREATED);
         } catch (IOException e) {
             return new ResponseEntity<>("Failed to upload file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
