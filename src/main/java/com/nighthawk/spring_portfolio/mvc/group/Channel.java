@@ -1,4 +1,4 @@
-package com.nighthawk.spring_portfolio.mvc.channel;
+package com.nighthawk.spring_portfolio.mvc.group;
 import java.util.Objects;
 
 import jakarta.persistence.Column;

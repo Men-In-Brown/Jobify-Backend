@@ -1,4 +1,4 @@
-package com.nighthawk.spring_portfolio.mvc.channel;
+package com.nighthawk.spring_portfolio.mvc.group;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
