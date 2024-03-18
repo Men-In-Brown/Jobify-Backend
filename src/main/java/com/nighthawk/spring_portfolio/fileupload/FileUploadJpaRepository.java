@@ -35,4 +35,6 @@ public interface FileUploadJpaRepository extends JpaRepository<FileUpload, Long>
     
     // Counts the total number of uploaded files by a specific user
     long countByUploaderUsername(String uploaderUsername);
+
+    FileUpload save(FileUpload fileUpload);
 }

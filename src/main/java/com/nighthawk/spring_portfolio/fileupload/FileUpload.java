@@ -33,13 +33,13 @@ public class FileUpload {
     @Column()
     private String description;
 
-    public String getUser1() { 
-        return user1; 
-    }
+    // public String getOriginalFilename() { 
+    //     return user1; 
+    // }
 
-    public void setUser1(String user1) { 
-        this.user1 = user1; 
-    }
+    // public void setUser1(String user1) { 
+    //     this.user1 = user1; 
+    // }
 
     // Additional properties as needed
 

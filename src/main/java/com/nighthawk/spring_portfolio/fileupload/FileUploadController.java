@@ -43,7 +43,7 @@ public class FileUploadController {
             fos.close();
 
             // Save file details to database
-            FileUpload savedFile = fileUploadRepository.save(new FileUpload(file.getOriginalFilename(), convertedFile.getAbsolutePath(), true, uploaderUsername, description));
+            FileUpload savedFile = fileUploadRepository.save(new FileUpload(null, file.getOriginalFilename(), convertedFile.getAbsolutePath(), true, uploaderUsername, description));
             return new ResponseEntity<>("File uploaded successfully with ID: " + savedFile.getId(), HttpStatus.CREATED);
         } catch (IOException e) {
             return new ResponseEntity<>("Failed to upload file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
