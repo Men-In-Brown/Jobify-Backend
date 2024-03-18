@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class FileUploadController {
 
     @Autowired
-    private FileUploadRepository fileUploadRepository;
+    private FileUploadJpaRepository FileUploadJpaRepository;
 
     @PostMapping("/upload")
     public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file,
