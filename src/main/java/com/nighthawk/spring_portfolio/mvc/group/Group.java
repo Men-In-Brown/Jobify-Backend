@@ -66,9 +66,92 @@ public class Group {
     public String getUser1() { 
         return user1; 
     }
-
     public void setUser1(String user1) { 
         this.user1 = user1; 
+    }
+    public String getUser2() { 
+        return user2; 
+    }
+    public void setUser2(String user2) { 
+        this.user2 = user2; 
+    }
+    public String getUser3() { 
+        return user3; 
+    }
+    public void setUser3(String user3) { 
+        this.user3 = user3; 
+    }
+    public String getUser4() { 
+        return user4; 
+    }
+    public void setUser4(String user4) { 
+        this.user4 = user4; 
+    }
+    public String getUser5() { 
+        return user5; 
+    }
+    public void setUser5(String user5) { 
+        this.user5 = user5; 
+    }
+    public String getUser6() { 
+        return user6; 
+    }
+    public void setUser6(String user6) { 
+        this.user6 = user6; 
+    }
+    public String getUser7() { 
+        return user7; 
+    }
+    public void setUser7(String user7) { 
+        this.user7 = user7; 
+    }
+    public String getUser8() { 
+        return user8; 
+    }
+    public void setUser8(String user8) { 
+        this.user8 = user8; 
+    }
+    public String getUser9() { 
+        return user9; 
+    }
+    public void setUser9(String user9) { 
+        this.user9 = user9; 
+    }
+    public String getUser10() { 
+        return user10; 
+    }
+    public void setUser10(String user10) { 
+        this.user10 = user10; 
+    }
+    public String getUser11() { 
+        return user11; 
+    }
+    public void setUser11(String user11) { 
+        this.user11 = user11; 
+    }
+    public String getUser12() { 
+        return user12; 
+    }
+    public void setUser12(String user12) { 
+        this.user12 = user12; 
+    }
+    public String getUser13() { 
+        return user13; 
+    }
+    public void setUser13(String user13) { 
+        this.user13 = user13; 
+    }
+    public String getUser14() { 
+        return user14; 
+    }
+    public void setUser14(String user14) { 
+        this.user14 = user14; 
+    }
+    public String getUser15() { 
+        return user15; 
+    }
+    public void setUser15(String user15) { 
+        this.user15 = user15; 
     }
 
     @Override
@@ -98,7 +181,7 @@ public class Group {
     return(channels);
     }
     public static void main(String[] args) {
-        // obtain Person from initializer
+        // obtain Group from initializer
         Group channels[] = init();
 
         // iterate using "enhanced for loop"
@@ -109,6 +192,6 @@ public class Group {
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, name, desc, creator);
+        return Objects.hash(Id, groupname, desc, creator, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15);
     }
 }
