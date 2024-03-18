@@ -22,7 +22,7 @@ public class FileUpload {
     private String filename;
 
     @Column()
-    private String filePath;
+    private String filepath;
 
     @Column()
     private boolean uploaded;
@@ -33,19 +33,25 @@ public class FileUpload {
     @Column()
     private String description;
 
-    // public String getOriginalFilename() { 
-    //     return user1; 
-    // }
+    public String getOriginalFilename() { 
+        return filename; 
+    }
 
-    // public void setUser1(String user1) { 
-    //     this.user1 = user1; 
-    // }
+    public void setOriginalFilename(String filename) { 
+        this.filename = filename; 
+    }
 
-    // Additional properties as needed
+    public String getAbsolutePath() { 
+        return filepath; 
+    }
 
-    public FileUpload(String filename, String filePath, String uploaderUsername, String description) {
+    public void setAbsolutePath(String filepath) { 
+        this.filepath = filepath; 
+    }
+
+    public FileUpload(String filename, String filepath, String uploaderUsername, String description) {
         this.filename = filename;
-        this.filePath = filePath;
+        this.filepath = filepath;
         this.uploaded = true;
         this.uploaderUsername = uploaderUsername;
         this.description = description;
