@@ -7,27 +7,27 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class ChannelApiController {
+public class GroupApiController {
 
     @Autowired
-    ChannelJpaRepository ChannelJpaRepository;
+    GroupJpaRepository ChannelJpaRepository;
 
     @GetMapping("/channel")
-    public List<Channel> getAllChannel() {
+    public List<Group> getAllChannel() {
         return ChannelJpaRepository.findAll();
     }
 
     @GetMapping("/channel/{id}")
-    public Channel getChannel(@PathVariable String id) {
+    public Group getChannel(@PathVariable String id) {
         Long channelID = Long.parseLong(id);
-        Optional<Channel> channel = ChannelJpaRepository.findById(channelID);
+        Optional<Group> channel = ChannelJpaRepository.findById(channelID);
         return channel.get();
     }
 
     @PostMapping("/channel/{id}")
-    public Channel updateChannel(@PathVariable String id, @RequestBody Channel newChannel) {
+    public Group updateChannel(@PathVariable String id, @RequestBody Group newChannel) {
         Long channelID = Long.parseLong(id);
-        Optional<Channel> channel = ChannelJpaRepository.findById(channelID);
+        Optional<Group> channel = ChannelJpaRepository.findById(channelID);
         channel.get().setName(newChannel.getName());
         channel.get().setDesc(newChannel.getDesc());
         ChannelJpaRepository.save(channel.get());
@@ -35,13 +35,13 @@ public class ChannelApiController {
     }
 
     @PostMapping("/channel")
-    public Channel createChannel(@RequestBody Channel channel) {
+    public Group createChannel(@RequestBody Group channel) {
         // Get the title and content from the request body
         String desc = channel.getDesc();
         String name = channel.getName();
         String creator = channel.getCreator();
         // Create a new Post object
-        Channel newChannel = new Channel();
+        Group newChannel = new Group();
         newChannel.setDesc(desc);
         newChannel.setName(name); // Set the title
         newChannel.setCreator(creator);
