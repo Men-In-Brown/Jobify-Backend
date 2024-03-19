@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.nighthawk.spring_portfolio.mvc.linkr.CompanyRepository;
-import com.nighthawk.spring_portfolio.mvc.linkr.Employee;
-import com.nighthawk.spring_portfolio.mvc.linkr.EmployeeRepository;
+import com.nighthawk.spring_portfolio.mvc.linkr.InternshipRepository;
+import com.nighthawk.spring_portfolio.mvc.linkr.Student;
+import com.nighthawk.spring_portfolio.mvc.linkr.StudentRepository;
 
 import org.springframework.ui.Model;
 
@@ -17,12 +17,12 @@ import java.util.Optional;
 
 public class UserController {
     @Autowired
-    EmployeeRepository employeeRepository;
+    StudentRepository employeeRepository;
 
     @GetMapping("/api/users")
     public String UsersAPI(Model model){
-        List<Employee> allEmployees = employeeRepository.findAll();
-        model.addAttribute("employees", allEmployees);
+        List<Student> allStudent = StudentRepository.findAll();
+        model.addAttribute("employees", allStudent);
         
         return "linkradmin";
     }
