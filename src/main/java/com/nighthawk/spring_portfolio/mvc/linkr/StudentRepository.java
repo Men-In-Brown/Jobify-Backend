@@ -11,7 +11,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findAllById(Long id);
 
-    @Query(value = "SELECT coalesce(max(id), 0) FROM Employee")
+    @Query(value = "SELECT coalesce(max(id), 0) FROM Student")
      Long getMaxId();
 
     Student findByEmail(String email);
