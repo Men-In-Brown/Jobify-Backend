@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    List<Student> findAll();
-
     List<Student> findAllById(Long id);
 
     @Query(value = "SELECT coalesce(max(id), 0) FROM Employee")
