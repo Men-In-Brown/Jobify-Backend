@@ -19,6 +19,8 @@ import com.nighthawk.spring_portfolio.mvc.note.Note;
 import com.nighthawk.spring_portfolio.mvc.person.Person;
 import com.nighthawk.spring_portfolio.mvc.person.PersonDetailsService;
 
+import groovyjarjarantlr4.v4.codegen.model.ExceptionClause;
+
 import java.util.List;
 
 @Component
@@ -33,6 +35,8 @@ public class ModelInit {
     @Bean
     CommandLineRunner run() {  // The run() method will be executed after the application starts
         return args -> {
+
+            System.out.println("Started Init)");
 
             Internship[] clist = Internship.internshipInit();
             for (Internship c : clist){
@@ -62,10 +66,17 @@ public class ModelInit {
                 //findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase
                 List<Person> personFound = personService.list(person.getName(), person.getEmail());  // lookup
                 if (personFound.size() == 0) {
-                    personService.save(person);  // save
+                    try {
+                        personService.save(person);  // save
+                    }
+                    catch(Exception e){
+                        System.out.println(e);
+                    }
                 }
             }
 
+            System.out.println("Exited person");
+            
             LinkrPAT[] list = LinkrPAT.init();
             for(LinkrPAT l : list){
                 List<LinkrPAT> found = patRepo.findAllByUser(l.getUser());
@@ -74,6 +85,7 @@ public class ModelInit {
                 }
             }
 
+            System.out.println("ended init");
         };
     }
 }

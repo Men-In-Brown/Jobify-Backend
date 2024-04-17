@@ -71,7 +71,9 @@ public class PersonDetailsService implements UserDetailsService {  // "implement
     // encode password prior to sava
     public void save(Person person) {
         person.setPassword(passwordEncoder().encode(person.getPassword()));
+        System.out.println("ran save");
         personJpaRepository.save(person);
+        System.out.println("exited save");
     }
 
     public Person get(long id) {

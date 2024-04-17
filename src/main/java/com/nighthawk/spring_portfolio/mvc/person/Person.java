@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -66,7 +67,7 @@ public class Person {
      * --- ArrayList is a resizable array implementation of the List interface, allowing all elements to be accessed using an integer index.
      * --- PersonRole is a POJO, Plain Old Java Object. 
      */
-    @ManyToMany(fetch = EAGER)
+    @ManyToMany(fetch = EAGER, cascade = CascadeType.ALL)
     private Collection<PersonRole> roles = new ArrayList<>();
 
     /** email, password, roles are key attributes to login and authentication
