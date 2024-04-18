@@ -18,9 +18,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Student")
-public class Student {
-
+@Table(name = "User")
+public class User {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,11 +39,12 @@ public class Student {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id")
+    @JoinColumn(name = "internship_id")
     private Internship internship;
 
+    private UserRoles role;
 
-    public Student(String name, String position, String email, String password){
+    public User(String name, String position, String email, String password){
         this.name = name;
         this.position = position;
         this.email = email;
@@ -53,13 +54,13 @@ public class Student {
         this.investments = 0;
     }
 
-    public static Student[] StudentInit(){
-        Student e1 = new Student("Tanay", "CEO", "tpatel@gmail.com", "123Tanay!");
-        Student e2 = new Student("Varaprasad", "CTO", "vnibhanupudi@gmail.com", "123Vlu!");
-        Student e3 = new Student("Paaras", "CFO", "ppurohit@gmail.com", "123Paras!");
-        Student e4 = new Student("Tobias", "Student", "toby@gmail.com", "123Toby");
-        Student e5 = new Student("Hubert", "Student", "hop@gmail.com", "123hop");
-        Student[] elist =  {e1, e2, e3, e4, e5};
+    public static User[] UserInit(){
+        User e1 = new User("Tanay", "CEO", "tpatel@gmail.com", "123Tanay!");
+        User e2 = new User("Varaprasad", "CTO", "vnibhanupudi@gmail.com", "123Vlu!");
+        User e3 = new User("Paaras", "CFO", "ppurohit@gmail.com", "123Paras!");
+        User e4 = new User("Tobias", "User", "toby@gmail.com", "123Toby");
+        User e5 = new User("Hubert", "User", "hop@gmail.com", "123Hopper");
+        User[] elist =  {e1, e2, e3, e4, e5};
         return elist;
     }
 }

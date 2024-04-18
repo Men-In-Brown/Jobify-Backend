@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.nighthawk.spring_portfolio.mvc.linkr.Student;
-import com.nighthawk.spring_portfolio.mvc.linkr.StudentRepository;
+import com.nighthawk.spring_portfolio.mvc.linkr.User;
+import com.nighthawk.spring_portfolio.mvc.linkr.UserRepository;
 import com.nighthawk.spring_portfolio.mvc.linkrAuthentication.LinkrPAT;
 import com.nighthawk.spring_portfolio.mvc.linkrAuthentication.PatJpaRepository;
 

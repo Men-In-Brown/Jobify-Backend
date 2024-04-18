@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PatJpaRepository extends JpaRepository<LinkrPAT, Date> {
+public interface PatJpaRepository extends JpaRepository<LinkrPAT, Long> {
 
 
     List<LinkrPAT> findAllByUser(String user);
