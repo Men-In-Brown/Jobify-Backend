@@ -230,7 +230,7 @@ public class AssignmentApiController {
             quizRepository.save(quiz);
 
             //Grade it
-            ArrayList<Integer> submittedAnswers = (ArrayList<Integer>)attributeMap.get("answers");
+            /*ArrayList<Integer> submittedAnswers = (ArrayList<Integer>)attributeMap.get("answers");
             Map<String, Object> questions = quizRepository.getById(Long.parseLong(Integer.toString(id))).getQuestions();
             
             int score = 0;
@@ -245,7 +245,7 @@ public class AssignmentApiController {
             }
 
             Grade grade = new Grade((String)attributeMap.get("username"), "temp", quiz.getTitle(), quiz.getMaxPoints(), score);
-            gradeRepository.save(grade);
+            gradeRepository.save(grade);*/
 
             // return Person with update Stats
             return new ResponseEntity<>(quiz, HttpStatus.OK);
