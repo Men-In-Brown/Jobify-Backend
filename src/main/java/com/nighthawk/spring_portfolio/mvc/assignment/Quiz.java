@@ -16,7 +16,7 @@ import jakarta.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity // Annotation to simplify creating an entity, which is a lightweight persistence domain object. Typically, an entity represents a table in a relational database, and each entity instance corresponds to a row in that table.
-public class Assignment {
+public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,9 +26,6 @@ public class Assignment {
 
     @Column()
     private String desc;
-
-    @Column()
-    private String link;
 
     @Column()
     private int maxPoints;
@@ -42,7 +39,7 @@ public class Assignment {
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
         "2022-11-13": {
-            "calories": 2200,
+            "calories": 2200
             "steps": 8000
         }
     }
@@ -51,13 +48,16 @@ public class Assignment {
     @Column(columnDefinition = "jsonb")
     private Map<String,Map<String, Object>> submissions = new HashMap<>(); 
 
-    public Assignment(String title, String desc, String link, int maxPoints, int jointId) {
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(columnDefinition = "jsonb")
+    private Map<String, Object> questions = new HashMap<>(); 
+
+    public Quiz(String title, String desc, int maxPoints, int jointId, Map<String, Object> questions) {
         this.title = title;
         this.desc = desc;
-        this.link = link;
         this.maxPoints = maxPoints;
-        this.quiz = false;
+        this.quiz = true;
         this.jointId = jointId;
-        //this.id = id;
+        this.questions = questions;
     }
 }
